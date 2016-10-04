@@ -210,7 +210,13 @@ function message(text:string):void;
 function modalbox(text:string, callback:WebixCallback):HTMLElement;
 function once(code:WebixCallback):void;
 function proto(target:any, mixin1?:any, mixinN?:any):any;
-function protoUI(target:any, view:any, mixin1:any, mixinN:any):any;
+/**
+ * merges the contents of several objects together into the first object and creates from it a new view
+ * @param target the object to extend. It receives the new properties
+ * @param view the view object that a new view is inherited from
+ * @param mixins one or many mixin objects
+ */
+function protoUI(target:Object, view:webix.ui.baseview, ...mixins: Object[]):any;
 function proxy(type:string, source:string):any;
 function ready(code:WebixCallback):void;
 function remote():void;
